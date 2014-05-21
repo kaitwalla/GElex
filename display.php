@@ -103,7 +103,7 @@ foreach ($data->races as $slug => $race) {
 	$pRetty = prettyNum($p);
 	$multiball = ($race->pos > 1) ? '<a class="multiRace"><em>Top '.$race->pos.' advance</em></a>' : false;
 	echo '<div class="race"><h3>'.$race->race.'</h3>'.$multiball.'<table class="'.$slug.' race">';
-	if ($race->total != 0) { echo '<div class="pace" data-pct="'.round($p,3).'"><a class="progbar"></a>'.$pRetty.' counted</div>'; }
+	if ($race->pctCount != 0) { echo '<div class="pace" data-pct="'.round($p,3).'"><a class="progbar"></a>'.$pRetty.' counted</div>'; }
 	foreach ($race->candidates as $cand) {
 			echo '<tr class="cand '.$cand->party.'"><td class="bar"><a class="statsBar"></a></td><td>'.$cand->name.' ('.$cand->party.')'.'</td><td class="results">'.prettyNum($cand->pct).'</td></tr>';
 	}
